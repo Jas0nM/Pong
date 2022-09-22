@@ -13,17 +13,11 @@
 // used to make a more unique folder for the write path
 #define COMPANY_NAME "My Company"
 
-enum class gameState {
-	startScreen,
-	gameScreen,
-	resultScreen
-};
+enum class gameState{startScreen, gameScreen, resultScreen};
 
 // Global values for the app
 class app
 {
-	gameState VarGameState;
-
 	public:
 
 		// constructor
@@ -35,10 +29,12 @@ class app
 		void End( void );
 
 	private:
+		gameState screens;
 		void updateStartScreen();
 		void updateGameScreen();
 		void updateResultScreen();
-
+		class Paddle* playerPaddle;
+		class Paddle* aiPaddle;
 };
 
 extern app App;
