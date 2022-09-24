@@ -1,6 +1,7 @@
 // Includes
 #include "template.h"
 #include "Paddle.h"
+#include "Ball.h"
 
 // Namespace
 using namespace AGK;
@@ -27,6 +28,7 @@ void app::Begin(void)
 	const float xAi = (agk::GetVirtualWidth() - agk::GetImageWidth(image) / 2.0f) - space;
 	playerPaddle = new Paddle(image, xPlayer);
 	aiPaddle = new Paddle(image, xAi);
+	ballOne = new Ball(playerPaddle, aiPaddle);
 }
 
 int app::Loop (void)
@@ -77,6 +79,8 @@ void app::updateGameScreen()
 	{
 		playerPaddle->moveDown();
 	}
+
+	ballOne->update();
 }
 
 void app::updateResultScreen()
@@ -92,4 +96,3 @@ void app::End (void)
 {
 
 }
-
