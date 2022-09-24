@@ -35,6 +35,7 @@ class app
 		void updateResultScreen();
 		class Paddle* playerPaddle;
 		class Paddle* aiPaddle;
+		class Ball* ballOne;
 };
 
 extern app App;
@@ -43,5 +44,5 @@ extern app App;
 
 // Allow us to use the LoadImage function name
 #ifdef LoadImage
- #undef LoadImage
+#undef LoadImage
 #endif
