@@ -11,4 +11,5 @@ class Paddle
 		void moveUP();
 		void moveDown();
 		void reset();
+		bool isCollidingWhithSprite(unsigned int therSprite) const;
 };
