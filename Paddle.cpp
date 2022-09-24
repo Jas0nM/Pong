@@ -8,7 +8,6 @@ Paddle::Paddle(unsigned int image, float startX)
 	sprite = agk::CreateSprite(image);
 	x = startX;
 	y = agk::GetVirtualHeight()/2;
-
 	agk::SetSpritePositionByOffset(sprite, x, y);
 }
 
@@ -48,4 +47,9 @@ void Paddle::move(float moveDirection)
 void Paddle::reset()
 {
 	agk::SetSpritePositionByOffset(sprite, x, agk::GetVirtualHeight()/2.0f);
+}
+
+bool Paddle::isCollidingWhithSprite(unsigned int otherSprite) const
+{
+	return 1 == agk::GetSpriteCollision(sprite, otherSprite);
 }
