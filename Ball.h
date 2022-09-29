@@ -14,4 +14,5 @@ class Ball
 	public:
 		Ball(Paddle* leftPaddle, Paddle* rightPaddle);
 		void update();
+		float getY() const;
 };
